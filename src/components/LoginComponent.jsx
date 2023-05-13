@@ -9,6 +9,26 @@ const LoginComponent = () => {
       <div className='login-form'>
         <h1 className='heading'>Sign In</h1>
         <p className='sub-heading'>Stay Updated on your professional world</p>
+
+        <div className='auth-inputs'>
+          <input 
+            type="text" 
+            placeholder='Email or Phone'
+            className='common-input'
+            onChange={(e) => {}}
+            />
+          <input 
+            type="password"
+            placeholder='Password'
+            className='common-input'
+            onChange={(e) => {}}
+          />
+        </div>
+        <button onClick={() => {}} className='login-btn' >
+          Sign IN
+        </button>
+        <hr className="hr-text" data-content="or" />
+        
       </div>
     </div>
   )
