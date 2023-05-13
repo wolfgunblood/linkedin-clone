@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.login-wrapper{
+    background-color: white ;
+    height: 100vh;
+    .linkedin-logo{
+        width: 80px;
+    }
+    .login-form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .heading{
+        font-family: system-ui;
+        font-weight: 500;
+        color: rgba(0,0,0,0.9);
+    }
+    .sub-heading{
+        font-family: system-ui;
+        margin-top: -20px;
+    }
+}
