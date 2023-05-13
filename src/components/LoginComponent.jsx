@@ -1,8 +1,10 @@
-import React from 'react'
-
+import React,{ useState } from 'react'
+import LinkedinLogo from '../assets/linkedinLogo.png';
 const LoginComponent = () => {
   return (
-    <div>LoginComponent</div>
+    <div className='login-wrapper'>
+      <img src="" alt="" />
+    </div>
   )
 }
 
