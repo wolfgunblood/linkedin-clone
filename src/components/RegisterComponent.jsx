@@ -5,7 +5,7 @@ import { GoogleLogin } from '@react-oauth/google';
 import { useNavigate } from 'react-router-dom';
 import { LoginAPI } from '../api/AuthAPI';
 
-const LoginComponent = () => {
+const RegisterComponent = () => {
   let navigate = useNavigate();
   const [cred, setCred] = useState({});
   const login = async () => {
@@ -24,8 +24,8 @@ const LoginComponent = () => {
       <img src={LinkedinLogo} alt="Linkedin Logo" className='linkedin-logo' />
 
       <div className='login-form'>
-        <h1 className='heading'>Sign In</h1>
-        <p className='sub-heading'>Stay Updated on your professional world</p>
+        <h1 className='heading'>Sign Up</h1>
+        <p className='sub-heading'>Make most of your professional Life</p>
 
         <div className='auth-inputs'>
           <input
@@ -42,7 +42,7 @@ const LoginComponent = () => {
           />
         </div>
         <button onClick={login} className='login-btn' >
-          Sign IN
+          Sign up
         </button>
       </div>
       <hr className="hr-text" data-content="or" />
@@ -58,9 +58,9 @@ const LoginComponent = () => {
           className='google-login-btn'
         />;
         <p className='google-login-text'>
-          New to LinkedIn?{" "}
-          <span className='sign-up-link' onClick={() => navigate('/register')}>
-            Join Now
+          Already on LinkedIn{" "}
+          <span className='sign-up-link' onClick={() => navigate('/')}>
+            Sign in
           </span>
         </p>
       </div>
@@ -69,4 +69,4 @@ const LoginComponent = () => {
   )
 }
 
-export default LoginComponent
+export default RegisterComponent
