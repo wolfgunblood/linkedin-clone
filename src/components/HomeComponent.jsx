@@ -1,8 +1,11 @@
 import React from 'react'
-
+import PostStatus from './common_component/PostStatus/PostStatus'
+import '../Sass/HomeComponent.scss'
 const HomeComponent = () => {
   return (
-    <div>HomeComponent</div>
+    <div className='home-container'>
+      <PostStatus />
+    </div>
   )
 }
 
