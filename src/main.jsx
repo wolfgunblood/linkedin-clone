@@ -5,6 +5,7 @@ import { RouterProvider } from 'react-router-dom';
 import { router } from './Routes';
 import { app, auth } from './firebaseConfig';
 import { GoogleOAuthProvider } from '@react-oauth/google';
+import { ToastContainer } from 'react-toastify';
 
 const clientId = import.meta.env.VITE_GOOGLE_CLIENT_ID;
 
@@ -13,6 +14,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <GoogleOAuthProvider clientId={clientId}>
       <RouterProvider router={router} />
+      <ToastContainer />
     </GoogleOAuthProvider>
   </React.StrictMode>,
 )

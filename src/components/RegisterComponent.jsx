@@ -3,18 +3,18 @@ import LinkedinLogo from '../assets/linkedinLogo.png';
 import '../Sass/LoginComponent.scss';
 import { GoogleLogin } from '@react-oauth/google';
 import { useNavigate } from 'react-router-dom';
-import { LoginAPI } from '../api/AuthAPI';
+import { SignUpAPI } from '../api/AuthAPI';
 
 const RegisterComponent = () => {
   let navigate = useNavigate();
   const [cred, setCred] = useState({});
-  const login = async () => {
+  const register = async () => {
     try {
-      const response = await LoginAPI(cred.email, cred.password);
-      if (response.status === 200) {
+      const response = await SignUpAPI(cred.email, cred.password);
+    //   if (response.status === 200) {
         localStorage.setItem('userEmail', response.user.email);
         navigate('/home');
-      }
+    //   }
     } catch (error) {
       console.log(error);
     }
@@ -41,7 +41,7 @@ const RegisterComponent = () => {
             onChange={(e) => setCred({ ...cred, password: e.target.value })}
           />
         </div>
-        <button onClick={login} className='login-btn' >
+        <button onClick={register} className='login-btn' >
           Sign up
         </button>
       </div>

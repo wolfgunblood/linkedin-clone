@@ -3,7 +3,9 @@ import LinkedinLogo from '../assets/linkedinLogo.png';
 import '../Sass/LoginComponent.scss';
 import { GoogleLogin } from '@react-oauth/google';
 import { useNavigate } from 'react-router-dom';
-import { LoginAPI } from '../api/AuthAPI';
+import { LoginAPI,GoogleLoginAPI } from '../api/AuthAPI';
+import { toast } from "react-toastify";
+
 
 const LoginComponent = () => {
   let navigate = useNavigate();
@@ -11,13 +13,20 @@ const LoginComponent = () => {
   const login = async () => {
     try {
       const response = await LoginAPI(cred.email, cred.password);
-      if (response.status === 200) {
+      // if (response.status === 200) {
+        // toast.success('Login Successful');        
         localStorage.setItem('userEmail', response.user.email);
         navigate('/home');
-      }
+      // }
     } catch (error) {
       console.log(error);
+      // toast.error('Login Failed');
     }
+  }
+  const googleLogin = () => {
+    let response = GoogleLoginAPI();
+    console.log(response);
+  
   }
   return (
     <div className='login-wrapper'>
@@ -54,6 +63,7 @@ const LoginComponent = () => {
           onError={() => {
             console.log('Login Failed');
           }}
+          onClick={googleLogin}
           shape='pill'
           className='google-login-btn'
         />;
