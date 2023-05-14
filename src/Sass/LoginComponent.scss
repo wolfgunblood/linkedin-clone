@@ -90,3 +90,23 @@ body {
       background-color: #fcfcfa;
     }
   }
+
+  .google-login-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .google-login-btn{
+        width: 300px !important;
+    }
+    .google-login-text{
+        font-size: 18px;
+    }
+    .sign-up-link{
+        color: $linkedinBlue1;
+        font-family: system-ui;
+        cursor: pointer;
+        font-size: 18px;
+    }
+  }
